@@ -1,4 +1,4 @@
-## Codifo fuente del proyecto
+## Codigo fuente del proyecto
 
 ```
 npm install
