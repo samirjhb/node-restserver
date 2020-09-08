@@ -11,8 +11,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//Configuracion global de rutas
+app.use(require('./routes/index'));
 
-app.use(require('./routes/usuario'));
+
 
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
     (err, res) => {
@@ -21,6 +23,7 @@ mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: tru
         console.log('Base de datos ONLINE');
 
     });
+
 
 app.listen(process.env.PORT, () => {
     console.log('Esccuhando puerto: ', process.env.PORT);
